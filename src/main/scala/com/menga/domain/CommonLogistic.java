@@ -3,7 +3,7 @@ package com.menga.domain;
 /**
  * Created by Marvel on 2019/9/20.
  */
-public class CommonLogisticsPrice {
+public class CommonLogistic {
 
     private String sourceCodeProvince;
     private String sourceCodeCity;
@@ -20,7 +20,7 @@ public class CommonLogisticsPrice {
     private String price7th;
     private String price8th;
 
-    public CommonLogisticsPrice() {
+    public CommonLogistic() {
     }
 
     public String getSourceCodeProvince() {

@@ -3,7 +3,7 @@ package com.menga.mysql
 import java.io.File
 import java.io.FileInputStream
 
-import com.menga.domain.CommonLogisticsPrice
+import com.menga.domain.CommonLogistic
 import org.apache.poi.xssf.usermodel.{XSSFCell, XSSFRow, XSSFSheet, XSSFWorkbook}
 
 import scala.collection.mutable
@@ -38,7 +38,7 @@ object POIDemo {
     wordBook.close()
   }
 
-  def readLogisticsExcel(): List[CommonLogisticsPrice] = {
+  def readLogisticsExcel(): List[CommonLogistic] = {
     val filePath = "第一批路线.xlsx"
     //打开需要读取的文件
     val inputStream: FileInputStream = new FileInputStream(new File(filePath))
@@ -55,18 +55,18 @@ object POIDemo {
     prices
   }
 
-  def dealLogisticsBook(wordBook: XSSFWorkbook): List[CommonLogisticsPrice] = {
+  def dealLogisticsBook(wordBook: XSSFWorkbook): List[CommonLogistic] = {
     val sheetNums = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     sheetNums.flatMap(it => dealLogisticsSheet(wordBook.getSheetAt(it)))
   }
 
-  def dealLogisticsSheet(sheet: XSSFSheet): List[CommonLogisticsPrice] = {
+  def dealLogisticsSheet(sheet: XSSFSheet): List[CommonLogistic] = {
     val rows = sheet.rowIterator()
-    val list: ArrayBuffer[CommonLogisticsPrice] = new ArrayBuffer[CommonLogisticsPrice]
+    val list: ArrayBuffer[CommonLogistic] = new ArrayBuffer[CommonLogistic]
     while (rows.hasNext) {
       val row = rows.next()
       if (row.getRowNum != 0) {
-        val price = new CommonLogisticsPrice
+        val price = new CommonLogistic
         price.setSourceCodeProvince(if (row.getCell(0) != null) row.getCell(0).getStringCellValue else "")
         price.setSourceCodeCity(if (row.getCell(1) != null) row.getCell(1).getStringCellValue else "")
         price.setSourceCodeZone(if (row.getCell(2) != null) row.getCell(2).getStringCellValue else "")
