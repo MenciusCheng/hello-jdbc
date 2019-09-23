@@ -32,6 +32,14 @@ public class CommonLogisticsPriceDao {
         return JdbcResources.getLogisticsdb().rows(CommonLogisticsPrice.class, sql);
     }
 
+    /**
+     * 查询所有内部运价
+     */
+    public List<CommonLogisticsPrice> findAll() {
+        String sql = "SELECT * FROM `common_logistics_prices` WHERE `logistics_contractor_id` = 1 AND `warehouse_id` = 0 limit 0, 100000";
+        return JdbcResources.getLogisticsdb().rows(CommonLogisticsPrice.class, sql);
+    }
+
     public static void main(String[] args) {
         List<CommonLogisticsPrice> prices = CommonLogisticsPriceDao.getInstance().findByCode("3302", "310230");
         for (CommonLogisticsPrice s : prices) {

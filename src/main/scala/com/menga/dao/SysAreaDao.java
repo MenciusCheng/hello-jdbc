@@ -27,6 +27,11 @@ public class SysAreaDao {
         return JdbcResources.getProductdb().rows(SysArea.class, sql);
     }
 
+    public List<SysArea> findAll() {
+        String sql = "SELECT * FROM `sys_area` limit 0, 100000";
+        return JdbcResources.getProductdb().rows(SysArea.class, sql);
+    }
+
     public static void main(String[] args) {
         List<SysArea> sysAreas = SysAreaDao.getInstance().findByFullName("贵州黔东南黎平九潮镇");
         for (SysArea s : sysAreas) {

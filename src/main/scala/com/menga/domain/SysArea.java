@@ -1,6 +1,8 @@
 package com.menga.domain;
 
 /**
+ * 数据库地址表
+ *
  * Created by Marvel on 2019/9/23.
  */
 public class SysArea {

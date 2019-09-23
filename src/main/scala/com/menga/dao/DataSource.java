@@ -60,8 +60,8 @@ public class DataSource {
     public <T> List<T> resultSetToList(Class<T> clazz, ResultSet resultSet) {
         List<T> list = new ArrayList<>();
         try {
-            T t = clazz.newInstance();
             while (resultSet.next()) {
+                T t = clazz.newInstance();
                 Field[] fields = clazz.getDeclaredFields();
                 for (Field field : fields) {
                     boolean accessible = field.isAccessible();
@@ -92,8 +92,8 @@ public class DataSource {
     public <T> List<T> resultSetToList2(Class<T> clazz, ResultSet resultSet) {
         List<T> list = new ArrayList<>();
         try {
-            T t = clazz.newInstance();
             while (resultSet.next()) {
+                T t = clazz.newInstance();
                 // 声明的属性
                 Field[] fields = clazz.getDeclaredFields();
                 // 声明的方法

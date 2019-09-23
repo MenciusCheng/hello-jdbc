@@ -1,6 +1,10 @@
 package com.menga.domain;
 
+import java.util.Objects;
+
 /**
+ * Excel 运价表
+ *
  * Created by Marvel on 2019/9/20.
  */
 public class CommonLogistic {
@@ -19,6 +23,24 @@ public class CommonLogistic {
     private String price6th;
     private String price7th;
     private String price8th;
+    private String sourceCodeName;
+    private String destinationCodeName;
+
+    public String getSourceCodeName() {
+        return sourceCodeName;
+    }
+
+    public void setSourceCodeName(String sourceCodeName) {
+        this.sourceCodeName = sourceCodeName;
+    }
+
+    public String getDestinationCodeName() {
+        return destinationCodeName;
+    }
+
+    public void setDestinationCodeName(String destinationCodeName) {
+        this.destinationCodeName = destinationCodeName;
+    }
 
     public CommonLogistic() {
     }
@@ -133,5 +155,51 @@ public class CommonLogistic {
 
     public void setPrice8th(String price8th) {
         this.price8th = price8th;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("CommonLogistic{");
+        sb.append("sourceCodeProvince='").append(sourceCodeProvince).append('\'');
+        sb.append(", sourceCodeCity='").append(sourceCodeCity).append('\'');
+        sb.append(", sourceCodeZone='").append(sourceCodeZone).append('\'');
+        sb.append(", destinationCodeProvince='").append(destinationCodeProvince).append('\'');
+        sb.append(", destinationCodeCity='").append(destinationCodeCity).append('\'');
+        sb.append(", destinationCodeZone='").append(destinationCodeZone).append('\'');
+        sb.append(", price1st='").append(price1st).append('\'');
+        sb.append(", price2nd='").append(price2nd).append('\'');
+        sb.append(", price3nd='").append(price3nd).append('\'');
+        sb.append(", price4th='").append(price4th).append('\'');
+        sb.append(", price5th='").append(price5th).append('\'');
+        sb.append(", price6th='").append(price6th).append('\'');
+        sb.append(", price7th='").append(price7th).append('\'');
+        sb.append(", price8th='").append(price8th).append('\'');
+        sb.append(", sourceCodeName='").append(sourceCodeName).append('\'');
+        sb.append(", destinationCodeName='").append(destinationCodeName).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CommonLogistic that = (CommonLogistic) o;
+        return Objects.equals(sourceCodeProvince, that.sourceCodeProvince) &&
+                Objects.equals(sourceCodeCity, that.sourceCodeCity) &&
+                Objects.equals(sourceCodeZone, that.sourceCodeZone) &&
+                Objects.equals(destinationCodeProvince, that.destinationCodeProvince) &&
+                Objects.equals(destinationCodeCity, that.destinationCodeCity) &&
+                Objects.equals(destinationCodeZone, that.destinationCodeZone) &&
+                Objects.equals(price1st, that.price1st) &&
+                Objects.equals(price2nd, that.price2nd) &&
+                Objects.equals(price3nd, that.price3nd) &&
+                Objects.equals(price4th, that.price4th) &&
+                Objects.equals(price5th, that.price5th) &&
+                Objects.equals(price6th, that.price6th) &&
+                Objects.equals(price7th, that.price7th) &&
+                Objects.equals(price8th, that.price8th) &&
+                Objects.equals(sourceCodeName, that.sourceCodeName) &&
+                Objects.equals(destinationCodeName, that.destinationCodeName);
     }
 }
