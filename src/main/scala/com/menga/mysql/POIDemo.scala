@@ -97,9 +97,8 @@ object POIDemo {
 //    readExcel()
     val prices = readLogisticsExcel()
 
+    // 检查问题数据，第一次需要先执行这个
 //    CommonLogisticsPriceUtil.check(prices)
-
-//    prices.foreach(p => System.out.println(p))
 
     val pTs = CommonLogisticsPriceUtil.convertToPT(prices)
 
